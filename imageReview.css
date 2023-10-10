@@ -1,0 +1,28 @@
+
+.container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-top:50px;
+  margin-right: 10rem;
+  
+}
+.underline{
+  height:5px;
+  width:120px;
+  background-color: aqua;
+}
+.wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  background-color: black;
+  width:50%;
+  margin-left: 10rem;
+  color:white;
+  border-radius: 20px;
+  
+}
+  
