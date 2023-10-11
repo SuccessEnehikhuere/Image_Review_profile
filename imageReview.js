@@ -7,7 +7,7 @@ let firstName = document.querySelector('.firstName');
 let lastName = document.querySelector('.lastName');
 let email = document.querySelector('.email');
 let iD = document.querySelector('.id');
-
+// created an empty array to store our data from the url
 let reviews = [];
 
 
@@ -21,7 +21,7 @@ async function myReviews(){
   const result = await response.json();
   reviews = result;
   console.log(result);
-  newObj= result.data[currentIndex]
+  newObj = result.data[currentIndex]
   console.log(newObj);
 }
  
@@ -32,27 +32,19 @@ async function myReviews(){
     console.log(result);
   } catch{
     console.log('error');
-
-  }
+ }
   
  }
  
  myReviews();
-console.log(newObj);
+
+//  console.log(newObj);
 
 
-//  let currentObj = [];
-//  function objReviews(){
-//   for(let i =0; i< reviews.length; i++){
-//      currentObj.push(reviews);
-     
-//   }
-//   console.log(currentObj);
-//  }
-//  console.log(objReviews());
+
 
 //  window.addEventListener('DOMContentLoaded', ()=>{
-//    updateDetails(currentItem);
+//    updateDetails(newObj);
    
 //    });
   
@@ -71,9 +63,20 @@ function updateDetails(newObj){
 
  nextButton.addEventListener('click',()=>{
   if(currentIndex === reviews.data.length-1){
-    return;
+    currentIndex = 0;
   }
   currentIndex ++;
+  newObj = reviews.data[currentIndex]
+  updateDetails(newObj);
+  
+ });
+
+ prevButton.addEventListener('click',()=>{
+
+  if(currentIndex === 0){
+    currentIndex = reviews.data.length-1;
+  }
+  currentIndex --;
   newObj = reviews.data[currentIndex]
   updateDetails(newObj);
   
