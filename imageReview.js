@@ -38,18 +38,16 @@ async function myReviews(){
  
  myReviews();
 
-//  console.log(newObj);
+
 
 
 
 
 //  window.addEventListener('DOMContentLoaded', ()=>{
-//    updateDetails(newObj);
+//    updateDetails(currentIndex);
    
 //    });
   
-
-
 
 
 function updateDetails(newObj){
@@ -81,3 +79,14 @@ function updateDetails(newObj){
   updateDetails(newObj);
   
  })
+
+
+ randomButton.addEventListener('click', ()=>{
+  
+  randomNumber = Math.floor(Math.random() * reviews.data.length); 
+  currentIndex = randomNumber;
+  
+  newObj = reviews.data[currentIndex];
+  updateDetails(newObj);
+ })
+
